@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+      <h1 class="welcome">Welcome to <span class="main text">To-Do </span>!</h1>
+      <h1 id="screen">Hello,</h1>
+      <input type="text" id="texting">
+      
+  </div>
+  <div class="container two">
+      <h2>Let's start to Focus!</h2>
+      <input type="text" id="addTask">
+      <button class="add">Add Task</button>
+      <ul class="todo-items">
+        <li class="item" id="exItem">You can write your tasks here</li>
+        <button class="delete"> Delete Task</button>
+      </ul>
+  </div>
+  <script>
+    let secreen =document.getElementById("screen");
+    let input = document.getElementById("texting");
+
+    let addTask = document.getElementById("addTask");
+    let addBtn = document.querySelector(".add");
+
+    let ul = document.querySelector(".todo-items");
+
+
+    input.addEventListener("input", function(e){
+      secreen.innerText = "Hello, "+ e.target.value;
+   
+    })
+
+    addBtn.addEventListener("click",function (){
+      if(addTask.value.trim() !== ""){
+      let newLi= document.createElement("li");
+      newLi.innerText = addTask.value;
+      ul.appendChild(newLi);
+      addTask.value = ""; 
+      let newbtn= document.createElement("button");
+      newbtn.textContent = "delete";
+      newbtn.classList.add("delete");
+      ul.appendChild(newbtn);
+
+      newbtn.addEventListener("click", function() {
+      newLi.remove();
+      newbtn.remove(); 
+
+  });
+      }else if (addTask.value.trim()=== ""){
+        alert("please enter a text")
+      }
+
+
+ });
+
+    let del = document.querySelector(".delete");
+    let exItem = document.getElementById("exItem");
+
+    del.addEventListener("click", function(e){
+        e.target.remove();
+        exItem.remove();
+    })
+   
+
+    
+  </script>
+</body>
+</html>

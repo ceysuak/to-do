@@ -1,0 +1,55 @@
+body{
+  background-color: coral;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+input{
+  border: none;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+.add{
+  background-color: rgb(56, 175, 45);
+  border: rgb(245, 245, 185);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: white;
+ 
+}
+.delete{
+  background-color: rgb(249, 73, 73);
+  border: rgb(245, 245, 185);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: white;
+}
+.delete:hover{
+  transform:scale(0.9);
+  background-color: brown;
+  transition: background-color 0.7s;
+}
+ul li{
+  list-style: none;
+}
+.todo-items{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@keyframes myani {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+h1{
+  animation-name: myani;
+  animation-duration: 2s;
+}
